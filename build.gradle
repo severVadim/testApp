@@ -1,0 +1,19 @@
+group 'testApp'
+version '1.0-SNAPSHOT'
+
+wrapper.gradleVersion = '5.5.1'
+def cucumberVersion = '1.2.4'
+apply plugin: 'java'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile "junit:junit:4.12"
+    compile('io.rest-assured:rest-assured:3.0.0',
+            'com.fasterxml.jackson.core:jackson-databind:2.10.0',
+            "info.cukes:cucumber-java:${cucumberVersion}",
+            "info.cukes:cucumber-junit:${cucumberVersion}",
+            )
+}
